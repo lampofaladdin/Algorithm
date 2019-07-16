@@ -1,0 +1,21 @@
+{
+  "name": "Algorithm",
+  "version": "1.0.0",
+  "description": "~没事写写",
+  "main": "index.js",
+  "scripts": {
+    "dev": " chokidar \"**/*.js\" -c \"node index.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lampofaladdin/Algorithm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lampofaladdin/Algorithm/issues"
+  },
+  "homepage": "https://github.com/lampofaladdin/Algorithm#readme"
+}
