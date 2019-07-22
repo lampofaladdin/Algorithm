@@ -4,4 +4,5 @@
 // // require('./question_easy/翻转图像');
 // require('./question_easy/机器人能否返回原点');
 // require('./question_easy/汉明距离');
-require('./question_easy/有序数组的平方');
+// require('./question_easy/有序数组的平方');
+require('./question_easy/高度检查器');
