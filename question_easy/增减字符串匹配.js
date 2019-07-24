@@ -29,35 +29,53 @@
  * @param {string} S
  * @return {number[]}
  */
-var diStringMatch = function (S) {
-    let arr = Array(S.length + 1).fill(null).map((v, i) => i);
-    let strArr = S.split("");
-    for (let i = 0; i < strArr.length; i++) {
+// var diStringMatch = function (S) {
+//     let arr = Array(S.length + 1).fill(null).map((v, i) => i);
+//     let strArr = S.split("");
+//     for (let i = 0; i < strArr.length; i++) {
+//         for (let j = 0; j < strArr.length; j++) {
+//             if (strArr[j] === "I") {
+//                 if (arr[j] > arr[j + 1]) {
+//                     let tmp = arr[j];
+//                     arr[j] = arr[j + 1];
+//                     arr[j + 1] = tmp
+//                 }
+//             } else {
+//                 if (arr[j] < arr[j + 1]) {
+//                     let tmp = arr[j];
+//                     arr[j] = arr[j + 1];
+//                     arr[j + 1] = tmp
+//                 }
+//             }
+//         }
 
-        for (let j = 0; j < strArr.length; j++) {
-            if (strArr[j] === "I") {
-
-                if (arr[j] > arr[j + 1]) {
-                    let tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp
-                }
-            } else {
-
-                if (arr[j] < arr[j + 1]) {
-                    let tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp
-                }
-            }
-        }
-        
-    }
-    return arr;
-};
-diStringMatch("DDI")
+//     }
+//     return arr;
+// };
+// diStringMatch("DDI")
 // 题解
 // 1、填充数组0-S.lenght
 // 2、双重循环，判断是否符合题目条件，如果不符合题目条件，进行交换
 // 3、此方法时间复杂度较高
 // 4、有更优解法
+
+/**
+ * @param {string} S
+ * @return {number[]}
+ */
+var diStringMatch = function (S) {
+    let arr = [];
+    let strArr = S.split("");
+    let s = 0,
+        m = strArr.length;
+    strArr.forEach((item, index) => {
+        if (item === "I") {
+            arr.push(s++);
+        } else {
+            arr.push(m--)
+        }
+    })
+    strArr[strArr.length - 1] === "I" ? arr.push(m) : arr.push(s);
+    return arr;
+};
+diStringMatch("DDI")
