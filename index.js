@@ -9,4 +9,5 @@
 // require('./question_easy/增减字符串匹配');
 // require('./question_easy/自除数');
 // require('./question_easy/Nim游戏');
-require('./question_easy/山脉数组的峰顶索引');
+// require('./question_easy/山脉数组的峰顶索引');
+require('./question_easy/数字的补数');
