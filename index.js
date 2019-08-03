@@ -12,4 +12,6 @@
 // require('./question_easy/山脉数组的峰顶索引');
 // require('./question_easy/数字的补数');
 // require('./question_easy/按奇偶排序数组');
-require('./question_easy/删列造序');
+// require('./question_easy/删列造序');
+// require('./question_easy/除数博弈');
+require('./question_easy/反转字符串');
