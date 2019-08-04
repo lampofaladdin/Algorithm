@@ -36,27 +36,56 @@
 // 输入列表的大小将介于1和1000之间。
 // 列表中的每个整数都将介于-30000和30000之间。
 
+// /**
+//  * 自己写的
+//  * @param {string[]} ops
+//  * @return {number}
+//  */
+// var calPoints = function (ops) {
+//     let result = [];
+//     ops.forEach((item) => {
+//         switch (item) {
+//             case "C":
+//                 result.pop();
+//                 break;
+//             case "D":
+//                 result.push(result[result.length - 1] * 2);
+//                 break;
+//             case "+":
+//                 result.push(result[result.length - 1] + result[result.length - 2]);
+//                 break;
+//             default:
+//                 result.push(parseInt(item));
+//         }
+//     })
+//     return result.reduce((a, b) => a + b);
+// };
+
+// calPoints(["5", "2", "C", "D", "+"]);
+
+
 /**
- * 自己写的
+ * 最优解法
  * @param {string[]} ops
  * @return {number}
  */
 var calPoints = function (ops) {
     let result = [];
     ops.forEach((item) => {
+        let end = result[result.length - 1] || 0;
         switch (item) {
             case "C":
-                console.log(1);
                 result.pop();
                 break;
             case "D":
-                result.push(result[result.length - 1] * 2);
+                result.push(end * 2);
                 break;
             case "+":
-                result.push(result[result.length - 1] + result[result.length - 2]);
+                let lastSconed = result[result.length - 2] || 0;
+                result.push(end + lastSconed);
                 break;
             default:
-                result.push(parseInt(item));
+                result.push(+item);
         }
     })
     return result.reduce((a, b) => a + b);
@@ -64,4 +93,6 @@ var calPoints = function (ops) {
 
 calPoints(["5", "2", "C", "D", "+"]);
 
-题解
+// 题解
+// 原本思路是想一遍解决问题，发现需要理清的地方太多，写出来也会让自己感觉到理解困难
+// 后使用一个新数组用来接收参数，比较好处理，结构也比较清晰
