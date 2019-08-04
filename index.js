@@ -14,4 +14,5 @@
 // require('./question_easy/按奇偶排序数组');
 // require('./question_easy/删列造序');
 // require('./question_easy/除数博弈');
-require('./question_easy/反转字符串');
+// require('./question_easy/反转字符串');
+require('./question_easy/array/棒球比赛');
