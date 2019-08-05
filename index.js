@@ -17,4 +17,5 @@
 // require('./question_easy/反转字符串');
 // require('./question_easy/array/棒球比赛');
 // require('./question_easy/array/二分查找');
-require('./question_easy/array/子域名访问计数');
+// require('./question_easy/array/子域名访问计数');
+require('./question_easy/array/键盘行');
