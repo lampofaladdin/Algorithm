@@ -21,4 +21,5 @@
 // require('./question_easy/array/键盘行');
 // require('./question_easy/array/反转字符串中的单词');
 // require('./question_easy/array/两个数组的交集');
-require('./question_easy/function/Excel表列序号');
+// require('./question_easy/function/Excel表列序号');
+require('./question_easy/array/按奇偶排序数组2');
