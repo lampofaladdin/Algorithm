@@ -29,15 +29,14 @@
  * @return {string[]}
  */
 var commonChars = function (A) {
-    let obj = {};
     let res = [];
     A[0].split("").forEach(code => {
         if (A.every((str, index) => {
-            if (str.includes(code)) {
-                A[index] = str.replace(code, "");
-                return true;
-            }
-        })) {
+                if (str.includes(code)) {
+                    A[index] = str.replace(code, "");
+                    return true;
+                }
+            })) {
             res.push(code);
         }
     })
