@@ -24,37 +24,70 @@ var shortestToChar = function (S, C) {
     let indexArr = [];
     let len = 0;
     let result = [];
-    while (S.indexOf(C, len) > -1) {
-        indexArr.push(S.indexOf(C, len));
-        len = indexArr[indexArr.length - 1] + 1;
-    }
-
-    for (let i = 0; i < indexArr.length; i++) {
-        let test = [];
-        let start = indexArr[i - 1] || 0;
-        let end = indexArr[i];
-        if (start === 0) {
-            for (let j = start; j <= end; j++) {
-                test.push(end - j)
-            }
-        } else if (end === indexArr[indexArr.length - 1]) {
-            for (let j = start + 1; j <= end; j++) {
-                test.push(Math.min(Math.abs(j - start), Math.abs(j - end)))
-            }
-            for (let j = end + 1, k = 0; j <= S.length; j++) {
-                test.push(k++);
-            }
-        } else {
-            for (let j = start + 1; j <= end; j++) {
-                test.push(Math.min(Math.abs(j - start), Math.abs(j - end)))
-            }
+    for (let i = 0; i < S.length; i++) {
+        if (S[i] == C) {
+            indexArr.push(i);
         }
-        result = result.concat(test);
+    }
+    for (let i = 0; i < S.length; i++) {
+        result.push(Math.abs(i - closed(i, indexArr)));
     }
     return result;
+
 }
 
+function closed(index, indexArr) {
+    for (let i = 0; i < indexArr.length; i++) {
+        if (index <= indexArr[0]) {
+            return indexArr[0];
+        } else if (index >= indexArr[indexArr.length - 1]) {
+            return indexArr[indexArr.length - 1]
+        } else if (index >= indexArr[i - 1] && index <= indexArr[i]) {
+            return Math.abs(index - indexArr[i - 1]) >= Math.abs(index - indexArr[i]) ? indexArr[i] : indexArr[i - 1];
+        } else {
+            continue;
+        }
+    }
+}
 
-console.log(shortestToChar("aaba", "b"));
+// 题解：
+// 循环，找到C对应字符串S的下标，push到数组内
+// 循环字符串找到字符串，定义一个方法，用来寻找当前下标距离哪个下标最近，
+// 找到最近的下标，相减取最小值，返回数组
+// 结论：脑壳不好使，只想到这种办法
 
-//待完成
+
+/**最优解法
+ * @param {string} S
+ * @param {character} C
+ * @return {number[]}
+ */
+var shortestToChar = function (S, C) {
+    let res = new Array(S.length);
+    let pre = Infinity;
+    for (let i = 0; i < S.length; i++) {
+        if (S[i] == C) {
+            pre = i
+        }
+        res[i] = Math.abs(i - pre)
+
+    }
+    pre = Infinity;
+    for (let i = S.length - 1; i >= 0; i--) {
+        if (S[i] == C) {
+            pre = i
+        }
+        res[i] = Math.min(res[i], Math.abs(pre - i))
+
+    }
+    return res;
+
+};
+
+console.log(shortestToChar("loveleetcode", 'e'))
+
+//最优解法
+// 定义一个空数组，数组长度为字符串的长度
+// 定义一个最大值pre，正序循环数组，当查到到C在S中的下标，pre就为当前下标，用pre-i的绝对值，得到正序循环的数组，
+// pre为最大值，倒序循环数组，当查找到C在S中的下表，pre的值为当前下标，比较当前res[i]和pre-i的值哪个小，小的为当前res[i]的值
+// 结论：卧槽！！！这些人怎么脑子这么好使的？？？？？？？？我要不要转行
