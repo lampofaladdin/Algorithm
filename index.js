@@ -24,5 +24,5 @@
 // require('./question_easy/function/Excel表列序号');
 // require('./question_easy/array/按奇偶排序数组2');
 // require('./question_easy/function/各位相加');
-require('./question_easy/function/回文数');
-require('./question_medium/字符串转换整数 (atoi)');
+// require('./question_easy/function/回文数');
+require('./question_medium/括号生成');
