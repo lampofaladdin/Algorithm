@@ -4,8 +4,7 @@
   "description": "~没事写写",
   "main": "index.js",
   "scripts": {
-    "dev": " chokidar \"**/*.js\" -c \"node index.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": " chokidar \"**/*.js\" -c \"node index.js\""
   },
   "repository": {
     "type": "git",
@@ -17,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lampofaladdin/Algorithm/issues"
   },
-  "homepage": "https://github.com/lampofaladdin/Algorithm#readme"
+  "homepage": "https://github.com/lampofaladdin/Algorithm#readme",
+  "dependencies": {
+    "chokidar-cli": "^2.1.0"
+  }
 }
