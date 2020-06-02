@@ -29,4 +29,5 @@
 // require('./question_medium/两数相加 II');
 // require('./question_medium/矩阵');
 // require('./question_medium/跳跃游戏');
-require('./question_easy/array/拥有最多糖果的孩子');
+// require('./question_easy/array/拥有最多糖果的孩子');
+require('./question_medium/求和');
