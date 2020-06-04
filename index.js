@@ -31,4 +31,5 @@
 // require('./question_medium/跳跃游戏');
 // require('./question_easy/array/拥有最多糖果的孩子');
 // require('./question_medium/求和');
-require('./question_medium/新21点');
+// require('./question_medium/新21点');
+require('./question_medium/除自身以外数组的乘积');
