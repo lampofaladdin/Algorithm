@@ -33,4 +33,16 @@
 // require('./question_medium/求和');
 // require('./question_medium/新21点');
 // require('./question_medium/除自身以外数组的乘积');
-require("./question_easy/array/顺时针打印矩阵");
+// require("./question_easy/array/顺时针打印矩阵");
+
+// 实现一个go函数,go('d')输出god,go('a')('b')('d')输出goabd go('ooo')('d')输出gooood
+function go(str) {
+  this.name = 1;
+  this.addStr = () => {
+    this.name += 1;
+    return this.addStr;
+  };
+  return this.addStr;
+}
+
+console.log(go()()());
