@@ -26,19 +26,42 @@
  * @return {number[]}
  */
 var spiralOrder = function (matrix) {
-  let i = 0;
-  let j = 0;
-  k = 0;
-  while (i < 9) {
-    console.log(matrix[j][k++]);
-    i++;
+  if (matrix.length === 0) return [];
+  let top = 0,
+    left = 0,
+    bottom = matrix.length - 1,
+    right = matrix[0].length - 1;
+  let size = matrix.length * matrix[0].length;
+  const res = [];
+  while (res.length !== size) {
+    for (let i = left; i <= right; i++) {
+      res.push(matrix[top][i]);
+    }
+    top++;
+    for (let i = top; i <= bottom; i++) {
+      res.push(matrix[i][right]);
+    }
+    right--;
+    if (res.length === size) {
+      break;
+    }
+    for (let i = right; i >= left; i--) {
+      res.push(matrix[bottom][i]);
+    }
+    bottom--;
+    for (let i = bottom; i >= top; i--) {
+      res.push(matrix[i][left]);
+    }
+    left++;
   }
+  return res;
 };
-spiralOrder([
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-]);
+console.log(
+  spiralOrder([
+    [2, 5, 8],
+    [4, 0, -1],
+  ])
+);
 
 // [1, 2, 3, 6, 9, 8, 7, 4, 5];
 
