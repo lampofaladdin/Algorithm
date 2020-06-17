@@ -34,5 +34,6 @@
 // require('./question_medium/新21点');
 // require('./question_medium/除自身以外数组的乘积');
 // require("./question_easy/array/顺时针打印矩阵");
-require("./question_easy/dp/连续子数组的最大和");
+// require("./question_easy/dp/连续子数组的最大和");
+require("./question_easy/dp/判断子序列");
 
