@@ -36,4 +36,43 @@
 // require("./question_easy/array/顺时针打印矩阵");
 // require("./question_easy/dp/连续子数组的最大和");
 // require("./question_easy/dp/判断子序列");
-// TODO 看书
+
+class Base {
+  name = 1;
+  test() {
+    console.log(this.name);
+  }
+}
+
+class C1 extends Base {
+  constructor() {
+    super();
+  }
+  test() {
+    console.log(++this.name);
+  }
+}
+
+class C2 extends Base {
+  constructor() {
+    super();
+  }
+  test() {
+    console.log(++this.name);
+  }
+}
+let base = new Base();
+let c1 = new C1()
+let c2 = new C2()
+c1.test()
+c1.test()
+c1.test()
+c1.test()
+c2.test()
+c2.test()
+c2.test()
+c2.test()
+c2.test()
+c2.test()
+base.test()
+
