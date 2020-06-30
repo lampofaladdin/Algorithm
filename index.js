@@ -37,42 +37,9 @@
 // require("./question_easy/dp/连续子数组的最大和");
 // require("./question_easy/dp/判断子序列");
 
-class Base {
-  name = 1;
-  test() {
-    console.log(this.name);
-  }
-}
+let brand = "小鹏汽车";
 
-class C1 extends Base {
-  constructor() {
-    super();
-  }
-  test() {
-    console.log(++this.name);
-  }
-}
-
-class C2 extends Base {
-  constructor() {
-    super();
-  }
-  test() {
-    console.log(++this.name);
-  }
-}
-let base = new Base();
-let c1 = new C1()
-let c2 = new C2()
-c1.test()
-c1.test()
-c1.test()
-c1.test()
-c2.test()
-c2.test()
-c2.test()
-c2.test()
-c2.test()
-c2.test()
-base.test()
-
+let title = "Model 3";
+title = title.replace(/\s*([a-zA-Z0-9\s]+)\s*/, " $1 ");
+console.log(title.length);
+console.log(title);
