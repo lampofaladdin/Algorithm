@@ -28,55 +28,22 @@
  * @return {number}
  */
 var kthSmallest = function (matrix, k) {
-  let n = matrix.length;
-  let time = 0;
-  let count = 0;
-
-  while (true) {
-    time++;
-    count += time;
-    if (count + time + 1 > k) {
-      break;
+  let arr = [];
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      arr.push(matrix[i][j]);
     }
   }
-  console.log(time, count);
-  //   for (let i = 0; i < time; i++) {
-  //     if (i >= n || time - i >= n) {
-  //       continue;
-  //     }
-  //     console.log(matrix[i][time - i], matrix[time - i][i], k, count);
-  //     if (matrix[i][time - i] > matrix[time - i][i]) {
-  //       if (i === k - count - 1) {
-  //         return matrix[i][time - i];
-  //       }
-  //     } else {
-  //       if (i === k - count - 1) {
-  //         return matrix[time - i][i];
-  //       }
-  //     }
-  //   }
-  return matrix[0][0];
+  arr = arr.sort((a, b) => a - b);
+  console.log(arr[k - 1]);
+  return arr[k - 1];
 };
-
-// 3 * 3
-
-// // 00 0
-// // 01 10 1
-// // 02 11 20 2
-// // 12 21 3
-// // 22 4
-
-// n * 2 - 1
-
-// 12 21  8 7
-
-// 1 +2 +3 + 4
 
 let matrix = [
     [1, 5, 9],
     [10, 11, 13],
     [12, 13, 15],
   ],
-  k = 2;
+  k = 8;
 
 kthSmallest(matrix, k);
