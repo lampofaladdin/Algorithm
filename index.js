@@ -36,10 +36,4 @@
 // require("./question_easy/array/顺时针打印矩阵");
 // require("./question_easy/dp/连续子数组的最大和");
 // require("./question_easy/dp/判断子序列");
-
-let brand = "小鹏汽车";
-
-let title = "Model 3";
-title = title.replace(/\s*([a-zA-Z0-9\s]+)\s*/, " $1 ");
-console.log(title.length);
-console.log(title);
+require("./question_medium/有序矩阵中第K小的元素");
