@@ -37,7 +37,8 @@
 // require("./question_easy/dp/连续子数组的最大和");
 // require("./question_easy/dp/判断子序列");
 // require("./question_medium/有序矩阵中第K小的元素");
-require("./设计模式/原型实现bind");
+// require("./设计模式/原型实现bind");
+require("./question_easy/array/旋转数组的最小数字");
 
 
 
